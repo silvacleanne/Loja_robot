@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on win32)" generated="2025-09-03T23:01:50.249366" rpa="false" schemaversion="5">
+<suite id="s1" name="Cadastro" source="c:\Users\Cleanne\Documents\GitHub\Loja_robot\tests\cadastro.robot">
+<test id="s1-t1" name=" CT 03 - Tentar cadastrar sem preencher campos obrigatórios" line="24">
+<kw name="Abrir o navegador" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:01:50.601948" level="INFO">Opening browser 'chrome' to base url 'http://www.automationpractice.pl/index.php'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-03T23:01:50.601332" elapsed="6.319462"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-03T23:01:56.920794" elapsed="0.032818"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:01:50.597025" elapsed="6.362135"/>
+</kw>
+<kw name="Given que estou na página de cadastro" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:01:56.961137" level="INFO">Clicking element '//a[@href="http://www.automationpractice.pl/index.php?controller=my-account"]'.</msg>
+<arg>${SING_IN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-03T23:01:56.961137" elapsed="1.098125"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${AUTHENTICATION}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-03T23:01:58.059262" elapsed="0.032736"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:01:56.961137" elapsed="1.131963"/>
+</kw>
+<kw name="When insiro um email válido" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:01:58.093100" level="INFO">Typing text 'clesil05@teste.com' into text field 'id=email_create'.</msg>
+<arg>${EMAIL_ADDRESS}</arg>
+<arg>${EMAIL_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-03T23:01:58.093100" elapsed="0.112696"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:01:58.093100" elapsed="0.112696"/>
+</kw>
+<kw name="And clico no botão &quot;Create an account&quot;" owner="keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:01:58.208464" level="INFO">Clicking button 'id=SubmitCreate'.</msg>
+<arg>${BUTTON_CREATE_ACCOUNT}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-03T23:01:58.207548" elapsed="0.101113"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:01:58.207548" elapsed="0.101113"/>
+</kw>
+<kw name="And deixo os campos obrigatórios em branco" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_NAME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-03T23:01:58.313435" elapsed="1.122565"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:01:59.438157" level="INFO">Typing text '' into text field 'id=customer_firstname'.</msg>
+<arg>${FIRST_NAME}</arg>
+<arg>${VAZIO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-03T23:01:59.438157" elapsed="0.176931"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:01:59.615088" level="INFO">Typing text '' into text field 'id=customer_lastname'.</msg>
+<arg>${LAST_NAME}</arg>
+<arg>${VAZIO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-03T23:01:59.615088" elapsed="0.188627"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:01:59.803715" level="INFO">Typing password into text field '//*[@id="passwd"]'.</msg>
+<msg time="2025-09-03T23:01:59.866931" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_1}</arg>
+<arg>${VAZIO}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-03T23:01:59.803715" elapsed="0.174994"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:01:58.313435" elapsed="1.665274"/>
+</kw>
+<kw name="And clico no botão &quot;Register&quot;" owner="keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:01:59.984343" level="INFO">Clicking button 'id=submitAccount'.</msg>
+<arg>${BUTTON_REGISTER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-03T23:01:59.984343" elapsed="0.135489"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:01:59.978709" elapsed="0.141123"/>
+</kw>
+<kw name="Then deve ser exibida a mensagem de erro informando os campos obrigatórios" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ALERT_BOX}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-03T23:02:00.121570" elapsed="0.612367"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:02:00.733937" level="INFO">Verifying element 'xpath=//div[@class="alert alert-danger"]/p' contains exact text 'There are 3 errors'.</msg>
+<arg>${ALERT_MSG}</arg>
+<arg>There are 3 errors</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-09-03T23:02:00.733937" elapsed="0.049297"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:02:00.783234" level="INFO">Verifying element 'xpath=(//div[@class="alert alert-danger"]/ol/li)[1]' contains exact text 'lastname is required.'.</msg>
+<arg>${ALERT_ERROR_LASTNAME}</arg>
+<arg>lastname is required.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-09-03T23:02:00.783234" elapsed="0.044972"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:02:00.828206" level="INFO">Verifying element 'xpath=(//div[@class="alert alert-danger"]/ol/li)[2]' contains exact text 'firstname is required.'.</msg>
+<arg>${ALERT_ERROR_FIRSTNAME}</arg>
+<arg>firstname is required.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-09-03T23:02:00.828206" elapsed="0.039674"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-03T23:02:00.867880" level="INFO">Verifying element 'xpath=(//div[@class="alert alert-danger"]/ol/li)[3]' contains exact text 'passwd is required.'.</msg>
+<arg>${ALERT_ERROR_PASSWD}</arg>
+<arg>passwd is required.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-09-03T23:02:00.867880" elapsed="0.048398"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:02:00.121570" elapsed="0.794708"/>
+</kw>
+<kw name="Fechar o navegador" owner="keywords" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-03T23:02:10.923971" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-03T23:02:00.916278" elapsed="10.008565"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-03T23:02:10.924843" elapsed="2.365093"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:02:00.916278" elapsed="12.373658"/>
+</kw>
+<status status="PASS" start="2025-09-03T23:01:50.597025" elapsed="22.695718"/>
+</test>
+<status status="PASS" start="2025-09-03T23:01:50.249366" elapsed="23.043377"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cadastro" id="s1" pass="1" fail="0" skip="0">Cadastro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
