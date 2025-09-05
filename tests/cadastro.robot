@@ -29,13 +29,23 @@ CT 02 - Tentar cadastrar com email já existente
       And clico no botão "Register"
       Then deve ser exibida a mensagem de erro informando os campos obrigatórios
 
-#   @negativo
-#   Scenario: Tentar cadastrar com senha menor que 5 caracteres
-#     Given que estou na página de cadastro
-#     When preencho os campos obrigatórios
-#     And insiro uma senha com menos de 5 caracteres
-#     And clico no botão "Register"
-#     Then deve ser exibida a mensagem "Password too short"
+CT 04: Tentar cadastrar com senha menor que 5 caracteres
+     Given que estou na página de cadastro
+     When insiro um email válido
+     And clico no botão "Create an Account"
+     And preencho os campos obrigatórios: "Title", "First name", "Last name", Date of Birth
+     And insiro uma senha com o mínimo caracteres
+     And clico no botão "Register"
+     Then deve ser exibida a mensagem "Password too short"
+
+CT05 - Tentar cadastrar com senha maior que o limite permitido
+     Given que estou na página de cadastro
+     When insiro um email válido
+     And clico no botão "Create an Account"
+     And preencho os campos obrigatórios: "Title", "First name", "Last name", Date of Birth
+     And insiro uma senha com o máximo de caracteres
+     And clico no botão "Register"
+     Then deve ser exibida a mensagem "Password too long"
 
 
 

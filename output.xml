@@ -1,147 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on win32)" generated="2025-09-03T23:01:50.249366" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on win32)" generated="2025-09-04T22:19:29.197393" rpa="false" schemaversion="5">
 <suite id="s1" name="Cadastro" source="c:\Users\Cleanne\Documents\GitHub\Loja_robot\tests\cadastro.robot">
-<test id="s1-t1" name=" CT 03 - Tentar cadastrar sem preencher campos obrigatórios" line="24">
+<test id="s1-t1" name="CT05 - Tentar cadastrar com senha maior que o limite permitido" line="41">
 <kw name="Abrir o navegador" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:01:50.601948" level="INFO">Opening browser 'chrome' to base url 'http://www.automationpractice.pl/index.php'.</msg>
+<msg time="2025-09-04T22:19:29.564781" level="INFO">Opening browser 'chrome' to base url 'http://www.automationpractice.pl/index.php'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-09-03T23:01:50.601332" elapsed="6.319462"/>
+<status status="PASS" start="2025-09-04T22:19:29.564781" elapsed="5.891329"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-09-03T23:01:56.920794" elapsed="0.032818"/>
+<status status="PASS" start="2025-09-04T22:19:35.456110" elapsed="0.055532"/>
 </kw>
-<status status="PASS" start="2025-09-03T23:01:50.597025" elapsed="6.362135"/>
+<status status="PASS" start="2025-09-04T22:19:29.563730" elapsed="5.947912"/>
 </kw>
 <kw name="Given que estou na página de cadastro" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:01:56.961137" level="INFO">Clicking element '//a[@href="http://www.automationpractice.pl/index.php?controller=my-account"]'.</msg>
+<msg time="2025-09-04T22:19:35.514648" level="INFO">Clicking element '//a[@href="http://www.automationpractice.pl/index.php?controller=my-account"]'.</msg>
 <arg>${SING_IN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-03T23:01:56.961137" elapsed="1.098125"/>
+<status status="PASS" start="2025-09-04T22:19:35.513644" elapsed="1.051600"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${AUTHENTICATION}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-03T23:01:58.059262" elapsed="0.032736"/>
+<status status="PASS" start="2025-09-04T22:19:36.566649" elapsed="0.038125"/>
 </kw>
-<status status="PASS" start="2025-09-03T23:01:56.961137" elapsed="1.131963"/>
+<status status="PASS" start="2025-09-04T22:19:35.512646" elapsed="1.092128"/>
 </kw>
 <kw name="When insiro um email válido" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:01:58.093100" level="INFO">Typing text 'clesil05@teste.com' into text field 'id=email_create'.</msg>
+<msg time="2025-09-04T22:19:36.606780" level="INFO">Typing text 'clesil06@teste.com' into text field 'id=email_create'.</msg>
 <arg>${EMAIL_ADDRESS}</arg>
 <arg>${EMAIL_VALIDO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-03T23:01:58.093100" elapsed="0.112696"/>
+<status status="PASS" start="2025-09-04T22:19:36.606780" elapsed="0.193945"/>
 </kw>
-<status status="PASS" start="2025-09-03T23:01:58.093100" elapsed="0.112696"/>
+<status status="PASS" start="2025-09-04T22:19:36.605773" elapsed="0.196229"/>
 </kw>
 <kw name="And clico no botão &quot;Create an account&quot;" owner="keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:01:58.208464" level="INFO">Clicking button 'id=SubmitCreate'.</msg>
+<msg time="2025-09-04T22:19:36.804332" level="INFO">Clicking button 'id=SubmitCreate'.</msg>
 <arg>${BUTTON_CREATE_ACCOUNT}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-03T23:01:58.207548" elapsed="0.101113"/>
+<status status="PASS" start="2025-09-04T22:19:36.804332" elapsed="0.113624"/>
 </kw>
-<status status="PASS" start="2025-09-03T23:01:58.207548" elapsed="0.101113"/>
+<status status="PASS" start="2025-09-04T22:19:36.803109" elapsed="0.114847"/>
 </kw>
-<kw name="And deixo os campos obrigatórios em branco" owner="keywords">
+<kw name="And preencho os campos obrigatórios: &quot;Title&quot;, &quot;First name&quot;, &quot;Last name&quot;, Date of Birth" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${FIRST_NAME}</arg>
-<arg>timeout=10s</arg>
+<arg>${MRS}</arg>
+<arg>5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-03T23:01:58.313435" elapsed="1.122565"/>
+<status status="PASS" start="2025-09-04T22:19:36.919968" elapsed="1.112743"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:19:38.033805" level="INFO">Clicking element 'id=id_gender2'.</msg>
+<arg>${MRS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:19:38.033805" elapsed="0.152234"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:01:59.438157" level="INFO">Typing text '' into text field 'id=customer_firstname'.</msg>
+<msg time="2025-09-04T22:19:38.186039" level="INFO">Typing text 'Cleo' into text field 'id=customer_firstname'.</msg>
 <arg>${FIRST_NAME}</arg>
-<arg>${VAZIO}</arg>
+<arg>${FIRST_NAME_VALIDO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-03T23:01:59.438157" elapsed="0.176931"/>
+<status status="PASS" start="2025-09-04T22:19:38.186039" elapsed="0.188011"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:01:59.615088" level="INFO">Typing text '' into text field 'id=customer_lastname'.</msg>
+<msg time="2025-09-04T22:19:38.376087" level="INFO">Typing text 'Silva' into text field 'id=customer_lastname'.</msg>
 <arg>${LAST_NAME}</arg>
-<arg>${VAZIO}</arg>
+<arg>${LAST_NAME_VALIDO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-03T23:01:59.615088" elapsed="0.188627"/>
+<status status="PASS" start="2025-09-04T22:19:38.375049" elapsed="0.180341"/>
 </kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:19:38.555390" level="INFO">Selecting options from selection list 'id=days' by value 15.</msg>
+<arg>${SELETOR_DIA}</arg>
+<arg>${VALOR_DIA}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-09-04T22:19:38.555390" elapsed="0.120159"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:19:38.676547" level="INFO">Selecting options from selection list 'id=months' by value 5.</msg>
+<arg>${SELETOR_MES}</arg>
+<arg>${VALOR_MES}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-09-04T22:19:38.676547" elapsed="0.114707"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:19:38.793490" level="INFO">Selecting options from selection list 'id=years' by value 1990.</msg>
+<arg>${SELETOR_ANO}</arg>
+<arg>${VALOR_ANO}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-09-04T22:19:38.793490" elapsed="0.100575"/>
+</kw>
+<status status="PASS" start="2025-09-04T22:19:36.918964" elapsed="1.975101"/>
+</kw>
+<kw name="And insiro uma senha com o máximo de caracteres" owner="keywords">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:01:59.803715" level="INFO">Typing password into text field '//*[@id="passwd"]'.</msg>
-<msg time="2025-09-03T23:01:59.866931" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-09-04T22:19:38.896064" level="INFO">Typing password into text field '//*[@id="passwd"]'.</msg>
+<msg time="2025-09-04T22:19:38.944758" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_1}</arg>
-<arg>${VAZIO}</arg>
+<arg>${SENHA_LONGA}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-03T23:01:59.803715" elapsed="0.174994"/>
+<status status="PASS" start="2025-09-04T22:19:38.896064" elapsed="0.171204"/>
 </kw>
-<status status="PASS" start="2025-09-03T23:01:58.313435" elapsed="1.665274"/>
+<status status="PASS" start="2025-09-04T22:19:38.895063" elapsed="0.172205"/>
 </kw>
 <kw name="And clico no botão &quot;Register&quot;" owner="keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:01:59.984343" level="INFO">Clicking button 'id=submitAccount'.</msg>
+<msg time="2025-09-04T22:19:39.067268" level="INFO">Clicking button 'id=submitAccount'.</msg>
 <arg>${BUTTON_REGISTER}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-03T23:01:59.984343" elapsed="0.135489"/>
+<status status="PASS" start="2025-09-04T22:19:39.067268" elapsed="0.681141"/>
 </kw>
-<status status="PASS" start="2025-09-03T23:01:59.978709" elapsed="0.141123"/>
+<status status="PASS" start="2025-09-04T22:19:39.067268" elapsed="0.681141"/>
 </kw>
-<kw name="Then deve ser exibida a mensagem de erro informando os campos obrigatórios" owner="keywords">
+<kw name="Then deve ser exibida a mensagem &quot;Password too long&quot;" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${ALERT_BOX}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-03T23:02:00.121570" elapsed="0.612367"/>
+<status status="PASS" start="2025-09-04T22:19:39.752529" elapsed="0.044420"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:02:00.733937" level="INFO">Verifying element 'xpath=//div[@class="alert alert-danger"]/p' contains exact text 'There are 3 errors'.</msg>
-<arg>${ALERT_MSG}</arg>
-<arg>There are 3 errors</arg>
+<msg time="2025-09-04T22:19:39.797946" level="INFO">Verifying element 'xpath=(//div[@class="alert alert-danger"]/ol/li)[1]' contains exact text 'passwd is too long. Maximum length: 32'.</msg>
+<arg>${ALERT_SENHA_MAX}</arg>
+<arg>passwd is too long. Maximum length: 32</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-09-03T23:02:00.733937" elapsed="0.049297"/>
+<status status="PASS" start="2025-09-04T22:19:39.796949" elapsed="0.037012"/>
 </kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:02:00.783234" level="INFO">Verifying element 'xpath=(//div[@class="alert alert-danger"]/ol/li)[1]' contains exact text 'lastname is required.'.</msg>
-<arg>${ALERT_ERROR_LASTNAME}</arg>
-<arg>lastname is required.</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-09-03T23:02:00.783234" elapsed="0.044972"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:02:00.828206" level="INFO">Verifying element 'xpath=(//div[@class="alert alert-danger"]/ol/li)[2]' contains exact text 'firstname is required.'.</msg>
-<arg>${ALERT_ERROR_FIRSTNAME}</arg>
-<arg>firstname is required.</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-09-03T23:02:00.828206" elapsed="0.039674"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-09-03T23:02:00.867880" level="INFO">Verifying element 'xpath=(//div[@class="alert alert-danger"]/ol/li)[3]' contains exact text 'passwd is required.'.</msg>
-<arg>${ALERT_ERROR_PASSWD}</arg>
-<arg>passwd is required.</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-09-03T23:02:00.867880" elapsed="0.048398"/>
-</kw>
-<status status="PASS" start="2025-09-03T23:02:00.121570" elapsed="0.794708"/>
+<status status="PASS" start="2025-09-04T22:19:39.750890" elapsed="0.083071"/>
 </kw>
 <kw name="Fechar o navegador" owner="keywords" type="TEARDOWN">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-09-03T23:02:10.923971" level="INFO">Slept 10 seconds.</msg>
+<msg time="2025-09-04T22:19:49.847883" level="INFO">Slept 10 seconds.</msg>
 <arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-09-03T23:02:00.916278" elapsed="10.008565"/>
+<status status="PASS" start="2025-09-04T22:19:39.847474" elapsed="10.001178"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-09-03T23:02:10.924843" elapsed="2.365093"/>
+<status status="PASS" start="2025-09-04T22:19:49.848652" elapsed="2.218291"/>
 </kw>
-<status status="PASS" start="2025-09-03T23:02:00.916278" elapsed="12.373658"/>
+<status status="PASS" start="2025-09-04T22:19:39.833961" elapsed="12.233993"/>
 </kw>
-<status status="PASS" start="2025-09-03T23:01:50.597025" elapsed="22.695718"/>
+<status status="PASS" start="2025-09-04T22:19:29.562225" elapsed="22.507716"/>
 </test>
-<status status="PASS" start="2025-09-03T23:01:50.249366" elapsed="23.043377"/>
+<status status="PASS" start="2025-09-04T22:19:29.201858" elapsed="22.871092"/>
 </suite>
 <statistics>
 <total>
