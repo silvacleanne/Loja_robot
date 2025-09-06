@@ -10,7 +10,7 @@ ${SING_IN}                   //a[@href="http://www.automationpractice.pl/index.p
 #Variáveis de formulário de cadastro
 ${AUTHENTICATION}            //*[@id="center_column"]/h1
 ${EMAIL_ADDRESS}             id=email_create
-${EMAIL_VALIDO}              clesil05@teste.com 
+${EMAIL_VALIDO}              clesil06@teste.com 
 ${BUTTON_CREATE_ACCOUNT}     id=SubmitCreate
 ${MR}                        id=id_gender1
 ${MRS}                       id=id_gender2
@@ -29,6 +29,8 @@ ${VALOR_ANO}                 1990
 ${BUTTON_REGISTER}           id=submitAccount
 ${ACCOUNT_SUCESSO}           //*[@id="center_column"]/p[1]
 ${MY_ACCOUNT}                //*[@id="center_column"]/h1
+${SENHA_CURTA}               12
+${SENHA_LONGA}               100000999999468465168781348711695257
 
 # Variável vazia para cenários de campos em branco
 ${EMPTY}
@@ -47,6 +49,8 @@ ${ALERT_ERROR_PASSWD}       xpath=(//div[@class="alert alert-danger"]/ol/li)[3]
 ${LOGIN_SUCESSO}            Welcome to your account
 ${ERRO_LOGIN}               Authentication failed.
 ${PERSONAL_INFORMATION}     Your personal information
+${ALERT_SENHA_INVALIDA}     xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
+${ALERT_SENHA_MAX}          xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
 
 #Variáveis de login
 ${USUARIO_VALIDO}            silvacle@test.com

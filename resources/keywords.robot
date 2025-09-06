@@ -62,5 +62,27 @@ Then deve ser exibida a mensagem de erro informando os campos obrigatórios
     Element Text Should Be           ${ALERT_ERROR_LASTNAME}     lastname is required.
     Element Text Should Be           ${ALERT_ERROR_FIRSTNAME}    firstname is required.
     Element Text Should Be           ${ALERT_ERROR_PASSWD}       passwd is required.
+
+And preencho os campos obrigatórios: "Title", "First name", "Last name", Date of Birth
+    Wait Until Element Is Visible    ${MRS}    5s
+    Click Element                    ${MRS}              
+    Input Text                       ${FIRST_NAME}     ${FIRST_NAME_VALIDO}             
+    Input Text                       ${LAST_NAME}      ${LAST_NAME_VALIDO}            
+    Select From List By Value        ${SELETOR_DIA}    ${VALOR_DIA}
+    Select From List By Value        ${SELETOR_MES}    ${VALOR_MES}
+    Select From List By Value        ${SELETOR_ANO}    ${VALOR_ANO}
            
+And insiro uma senha com o mínimo caracteres
+    Input Password     ${PASSWORD_1}     ${SENHA_CURTA} 
+
+Then deve ser exibida a mensagem "Password too short"
+    Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s 
+    Element Text Should Be           ${ALERT_SENHA_INVALIDA}     passwd is invalid.
+
+And insiro uma senha com o máximo de caracteres
+    Input Password     ${PASSWORD_1}    ${SENHA_LONGA} 
+
+Then deve ser exibida a mensagem "Password too long"  
+    Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s  
+    Element Text Should Be           ${ALERT_SENHA_MAX}          passwd is too long. Maximum length: 32
     
