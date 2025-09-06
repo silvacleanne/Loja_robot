@@ -86,3 +86,15 @@ Then deve ser exibida a mensagem "Password too long"
     Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s  
     Element Text Should Be           ${ALERT_SENHA_MAX}          passwd is too long. Maximum length: 32
     
+Given que estou na página de login
+    Click Element    ${SING_IN}
+    Wait Until Element Is Visible    ${AUTHENTICATION}  
+When insiro um email válido e senha válida
+    Input Text    ${EMAIL_REGISTERED}       ${USUARIO_VALIDO}   
+    Input Password    ${PASSWORD_2}    ${SENHA_VALIDA}
+
+And clico no botão "Sign in"
+    Click Element    ${BUTTON_SIGN}
+    
+
+    

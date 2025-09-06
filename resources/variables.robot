@@ -36,6 +36,12 @@ ${SENHA_LONGA}               100000999999468465168781348711695257
 ${EMPTY}
 ${VAZIO} 
 
+#Variáveis de login
+${EMAIL_REGISTERED}          id=email
+${USUARIO_VALIDO}            silvacle@test.com
+${PASSWORD_2}                id=passwd
+${BUTTON_SIGN}               id=SubmitLogin
+
 # Mensagens esperadas
 ${MSG_SUCESSO}              Your account has been created.
 ${MSG_JA_CADASTRADO}        id=create_account_error
@@ -51,6 +57,5 @@ ${ERRO_LOGIN}               Authentication failed.
 ${PERSONAL_INFORMATION}     Your personal information
 ${ALERT_SENHA_INVALIDA}     xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
 ${ALERT_SENHA_MAX}          xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
+${PERSONAL_INFORMATION}     Your personal information
 
-#Variáveis de login
-${USUARIO_VALIDO}            silvacle@test.com
