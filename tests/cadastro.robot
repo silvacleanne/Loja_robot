@@ -6,7 +6,7 @@ Test Teardown   Fechar o navegador
 
 *** Test Cases ***
 
- CT 01 - Cadastrar a conta com sucesso
+ CT 01: Cadastrar a conta com sucesso
      Given que estou na página de cadastro
      When insiro um email válido
      And clico no botão "Create an account"
@@ -15,13 +15,13 @@ Test Teardown   Fechar o navegador
      Then a conta deve ser criada com sucesso
      And devo ser redirecionado para a página inicial do sistema
 
-CT 02 - Tentar cadastrar com email já existente
+CT 02: Cadastrar com email já existente
       Given que estou na página de cadastro
       When insiro um email já cadastrado
       And clico no botão "Create an account"
       Then deve ser exibida a mensagem "Email already registered"
 
- CT 03 - Tentar cadastrar sem preencher campos obrigatórios
+ CT 03: Cadastrar sem preencher campos obrigatórios
       Given que estou na página de cadastro
       When insiro um email válido
       And clico no botão "Create an Account"
@@ -29,7 +29,7 @@ CT 02 - Tentar cadastrar com email já existente
       And clico no botão "Register"
       Then deve ser exibida a mensagem de erro informando os campos obrigatórios
 
-CT 04: Tentar cadastrar com senha menor que 5 caracteres
+CT 04: Cadastrar com senha menor que 5 caracteres
      Given que estou na página de cadastro
      When insiro um email válido
      And clico no botão "Create an Account"
@@ -38,7 +38,7 @@ CT 04: Tentar cadastrar com senha menor que 5 caracteres
      And clico no botão "Register"
      Then deve ser exibida a mensagem "Password too short"
 
-CT05 - Tentar cadastrar com senha maior que o limite permitido
+CT05: Cadastrar com senha maior que o limite permitido
      Given que estou na página de cadastro
      When insiro um email válido
      And clico no botão "Create an Account"
@@ -47,7 +47,7 @@ CT05 - Tentar cadastrar com senha maior que o limite permitido
      And clico no botão "Register"
      Then deve ser exibida a mensagem "Password too long"
 
-
+  
 
 
 
