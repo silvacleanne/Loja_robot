@@ -4,6 +4,11 @@ Resource     ../resources/keywords.robot
 Test Setup      Abrir o navegador
 Test Teardown   Fechar o navegador
 
+Documentation  Feature: Cadastro de Usuário
+...    Como um novo visitante
+...    Quero criar uma conta no sistema
+...    Para acessar as funcionalidades restritas
+
 *** Test Cases ***
 
  CT 01: Cadastrar a conta com sucesso
@@ -16,18 +21,18 @@ Test Teardown   Fechar o navegador
      And devo ser redirecionado para a página inicial do sistema
 
 CT 02: Cadastrar com email já existente
-      Given que estou na página de cadastro
-      When insiro um email já cadastrado
-      And clico no botão "Create an account"
-      Then deve ser exibida a mensagem "Email already registered"
+     Given que estou na página de cadastro
+     When insiro um email já cadastrado
+     And clico no botão "Create an account"
+     Then deve ser exibida a mensagem "Email already registered"
 
  CT 03: Cadastrar sem preencher campos obrigatórios
-      Given que estou na página de cadastro
-      When insiro um email válido
-      And clico no botão "Create an Account"
-      And deixo os campos obrigatórios em branco
-      And clico no botão "Register"
-      Then deve ser exibida a mensagem de erro informando os campos obrigatórios
+     Given que estou na página de cadastro
+     When insiro um email válido
+     And clico no botão "Create an Account"
+     And deixo os campos obrigatórios em branco
+     And clico no botão "Register"
+     Then deve ser exibida a mensagem de erro informando os campos obrigatórios
 
 CT 04: Cadastrar com senha menor que 5 caracteres
      Given que estou na página de cadastro

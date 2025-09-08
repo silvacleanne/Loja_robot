@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    XML
 Resource   variables.robot
 
 *** Keywords ***
@@ -77,7 +78,7 @@ And insiro uma senha com o mínimo caracteres
 
 Then deve ser exibida a mensagem "Password too short"
     Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s 
-    Element Text Should Be           ${ALERT_SENHA_INVALIDA}     passwd is invalid.
+    Element Text Should Be           ${ALERT_SENHA_INVALIDA1}     passwd is invalid.
 
 And insiro uma senha com o máximo de caracteres
     Input Password     ${PASSWORD_1}    ${SENHA_LONGA} 
@@ -86,3 +87,36 @@ Then deve ser exibida a mensagem "Password too long"
     Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s  
     Element Text Should Be           ${ALERT_SENHA_MAX}          passwd is too long. Maximum length: 32
     
+Given que estou na página de login
+    Click Element    ${SING_IN}
+    Wait Until Element Is Visible    ${AUTHENTICATION}  
+When insiro um email válido e senha válida
+    Input Text        ${EMAIL_REGISTERED}       ${USUARIO_VALIDO}   
+    Input Password    ${PASSWORD_2}             ${SENHA_VALIDA}
+
+And clico no botão "Sign in"
+    Click Element    ${BUTTON_SIGN}
+    
+When ele informa um email válido e uma senha inválida
+    Input Text      ${EMAIL_REGISTERED}       ${USUARIO_VALIDO}
+    Input Text      ${PASSWORD_2}             ${SENHA_INVALIDA}
+
+Then o sistema deve exibir uma mensagem de erro de senha
+    Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s
+    Element Text Should Be           ${ALERT_LOGIN_INVALIDO}     Invalid password.  
+    
+When ele informa um email inválido e uma senha válida
+    Input Text      ${EMAIL_REGISTERED}       ${EMAIL_INVALIDO}
+    Input Text      ${PASSWORD_2}             ${SENHA_VALIDA}
+
+Then o sistema deve exibir uma mensagem informando que o email esta errado 
+    Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s
+    Element Text Should Be          ${ALERT_LOGIN_INVALIDO}      Authentication failed. 
+
+When ele não preenche email e senha
+    Input Text        ${EMAIL_REGISTERED}       ${VAZIO}   
+    Input Password    ${PASSWORD_2}             ${VAZIO}
+
+Then o sistema deve exibir mensagem de obrigatoriedade
+    Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s
+    Element Text Should Be          ${ALERT_LOGIN_INVALIDO}      An email address required.
