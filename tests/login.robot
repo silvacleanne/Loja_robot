@@ -6,7 +6,7 @@ Test Teardown   Fechar o navegador
 
 *** Test Cases ***
   
-CT 01 - Fazer login com sucesso
+CT 01: Fazer login com sucesso
     Given que estou na página de login
     When insiro um email válido e senha válida
     And clico no botão "Sign in"
