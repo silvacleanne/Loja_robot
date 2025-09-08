@@ -1,90 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on win32)" generated="2025-09-05T22:47:31.408557" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on win32)" generated="2025-09-07T22:43:12.789681" rpa="false" schemaversion="5">
 <suite id="s1" name="Login" source="c:\Users\Cleanne\Documents\GitHub\Loja_robot\tests\login.robot">
-<test id="s1-t1" name="CT 01 - Fazer login com sucesso" line="14">
+<test id="s1-t1" name="CT 04: Login com campos vazios" line="27">
 <kw name="Abrir o navegador" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-09-05T22:47:31.857242" level="INFO">Opening browser 'chrome' to base url 'http://www.automationpractice.pl/index.php'.</msg>
+<msg time="2025-09-07T22:43:13.160528" level="INFO">Opening browser 'chrome' to base url 'http://www.automationpractice.pl/index.php'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-09-05T22:47:31.856565" elapsed="7.793971"/>
+<status status="PASS" start="2025-09-07T22:43:13.160528" elapsed="6.679811"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-09-05T22:47:39.652544" elapsed="0.044582"/>
+<status status="PASS" start="2025-09-07T22:43:19.841952" elapsed="0.056175"/>
 </kw>
-<status status="PASS" start="2025-09-05T22:47:31.839777" elapsed="7.857349"/>
+<status status="PASS" start="2025-09-07T22:43:13.160528" elapsed="6.737599"/>
 </kw>
 <kw name="Given que estou na página de login" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-09-05T22:47:39.702381" level="INFO">Clicking element '//a[@href="http://www.automationpractice.pl/index.php?controller=my-account"]'.</msg>
+<msg time="2025-09-07T22:43:19.898127" level="INFO">Clicking element '//a[@href="http://www.automationpractice.pl/index.php?controller=my-account"]'.</msg>
 <arg>${SING_IN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T22:47:39.701096" elapsed="1.050418"/>
+<status status="PASS" start="2025-09-07T22:43:19.898127" elapsed="1.351967"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${AUTHENTICATION}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-05T22:47:40.751514" elapsed="0.124421"/>
+<status status="PASS" start="2025-09-07T22:43:21.250094" elapsed="0.038555"/>
 </kw>
-<status status="PASS" start="2025-09-05T22:47:39.697126" elapsed="1.180338"/>
+<status status="PASS" start="2025-09-07T22:43:19.898127" elapsed="1.394150"/>
 </kw>
-<kw name="When insiro um email válido e senha válida" owner="keywords">
+<kw name="When ele não preenche email e senha" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-05T22:47:40.881351" level="INFO">Typing text 'silvacle@test.com' into text field 'id=email'.</msg>
+<msg time="2025-09-07T22:43:21.292277" level="INFO">Typing text '' into text field 'id=email'.</msg>
 <arg>${EMAIL_REGISTERED}</arg>
-<arg>${USUARIO_VALIDO}</arg>
+<arg>${VAZIO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T22:47:40.877464" elapsed="0.169982"/>
+<status status="PASS" start="2025-09-07T22:43:21.292277" elapsed="0.297029"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-09-05T22:47:41.049838" level="INFO">Typing password into text field 'id=passwd'.</msg>
-<msg time="2025-09-05T22:47:41.105502" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-09-07T22:43:21.589306" level="INFO">Typing password into text field 'id=passwd'.</msg>
+<msg time="2025-09-07T22:43:21.645226" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_2}</arg>
-<arg>${SENHA_VALIDA}</arg>
+<arg>${VAZIO}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T22:47:41.047446" elapsed="0.136802"/>
+<status status="PASS" start="2025-09-07T22:43:21.589306" elapsed="0.137518"/>
 </kw>
-<status status="PASS" start="2025-09-05T22:47:40.877464" elapsed="0.306784"/>
+<status status="PASS" start="2025-09-07T22:43:21.292277" elapsed="0.434547"/>
 </kw>
 <kw name="And clico no botão &quot;Sign in&quot;" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-09-05T22:47:41.188884" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
+<msg time="2025-09-07T22:43:21.730892" level="INFO">Clicking element 'id=SubmitLogin'.</msg>
 <arg>${BUTTON_SIGN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-05T22:47:41.188884" elapsed="1.071693"/>
+<status status="PASS" start="2025-09-07T22:43:21.730892" elapsed="0.545774"/>
 </kw>
-<status status="PASS" start="2025-09-05T22:47:41.184248" elapsed="1.076329"/>
+<status status="PASS" start="2025-09-07T22:43:21.726824" elapsed="0.549842"/>
 </kw>
-<kw name="And devo ser redirecionado para a página inicial do sistema" owner="keywords">
+<kw name="Then o sistema deve exibir mensagem de obrigatoriedade" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${MY_ACCOUNT}</arg>
+<arg>${ALERT_BOX}</arg>
+<arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-09-05T22:47:42.260577" elapsed="0.030375"/>
+<status status="PASS" start="2025-09-07T22:43:22.280921" elapsed="0.091171"/>
 </kw>
-<status status="PASS" start="2025-09-05T22:47:42.260577" elapsed="0.031085"/>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-07T22:43:22.376247" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2025-09-07T22:43:22.379575" level="INFO">Verifying element 'xpath=//div[@class="alert alert-danger"]/ol/li' contains exact text 'An email address required.'.</msg>
+<arg>${ALERT_LOGIN_INVALIDO}</arg>
+<arg>An email address required.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-09-07T22:43:22.376247" elapsed="0.041990"/>
+</kw>
+<status status="PASS" start="2025-09-07T22:43:22.280390" elapsed="0.137847"/>
 </kw>
 <kw name="Fechar o navegador" owner="keywords" type="TEARDOWN">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-09-05T22:47:52.294454" level="INFO">Slept 10 seconds.</msg>
+<msg time="2025-09-07T22:43:32.426994" level="INFO">Slept 10 seconds.</msg>
 <arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-09-05T22:47:42.293785" elapsed="10.000669"/>
+<status status="PASS" start="2025-09-07T22:43:22.426341" elapsed="10.000653"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-09-05T22:47:52.294454" elapsed="2.345736"/>
+<status status="PASS" start="2025-09-07T22:43:32.428011" elapsed="2.388294"/>
 </kw>
-<status status="PASS" start="2025-09-05T22:47:42.292215" elapsed="12.352048"/>
+<status status="PASS" start="2025-09-07T22:43:22.424586" elapsed="12.391719"/>
 </kw>
-<status status="PASS" start="2025-09-05T22:47:31.839777" elapsed="22.804486"/>
+<status status="PASS" start="2025-09-07T22:43:13.160528" elapsed="21.655777"/>
 </test>
-<doc>Feature: Login e Cadastro de Usuário
-Como um novo visitante
-Quero criar uma conta no sistema
-Para acessar as funcionalidades restritas</doc>
-<status status="PASS" start="2025-09-05T22:47:31.411380" elapsed="23.237152"/>
+<status status="PASS" start="2025-09-07T22:43:12.795520" elapsed="22.026075"/>
 </suite>
 <statistics>
 <total>
@@ -97,5 +102,6 @@ Para acessar as funcionalidades restritas</doc>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-09-07T22:43:22.376247" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
 </errors>
 </robot>

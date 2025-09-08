@@ -41,6 +41,8 @@ ${EMAIL_REGISTERED}          id=email
 ${USUARIO_VALIDO}            silvacle@test.com
 ${PASSWORD_2}                id=passwd
 ${BUTTON_SIGN}               id=SubmitLogin
+${SENHA_INVALIDA}            123
+${EMAIL_INVALIDO}            teste@teste.com
 
 # Mensagens esperadas
 ${MSG_SUCESSO}              Your account has been created.
@@ -52,10 +54,16 @@ ${ALERT_MSG}                xpath=//div[@class="alert alert-danger"]/p
 ${ALERT_ERROR_LASTNAME}     xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
 ${ALERT_ERROR_FIRSTNAME}    xpath=(//div[@class="alert alert-danger"]/ol/li)[2]
 ${ALERT_ERROR_PASSWD}       xpath=(//div[@class="alert alert-danger"]/ol/li)[3]
+${ALERT_SENHA_INVALIDA1}    xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
+${ALERT_SENHA_MAX}          xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
+${ALERT_LOGIN_INVALIDO}     xpath=//div[@class="alert alert-danger"]/ol/li
 ${LOGIN_SUCESSO}            Welcome to your account
 ${ERRO_LOGIN}               Authentication failed.
 ${PERSONAL_INFORMATION}     Your personal information
-${ALERT_SENHA_INVALIDA}     xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
-${ALERT_SENHA_MAX}          xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
+
 ${PERSONAL_INFORMATION}     Your personal information
+@{MENSAGENS_ERRO_LOGIN}
+...    Invalid password.
+...    Authentication failed.
+
 

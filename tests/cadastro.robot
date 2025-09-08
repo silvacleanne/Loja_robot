@@ -4,6 +4,11 @@ Resource     ../resources/keywords.robot
 Test Setup      Abrir o navegador
 Test Teardown   Fechar o navegador
 
+Documentation  Feature: Cadastro de Usuário
+...    Como um novo visitante
+...    Quero criar uma conta no sistema
+...    Para acessar as funcionalidades restritas
+
 *** Test Cases ***
 
  CT 01: Cadastrar a conta com sucesso
