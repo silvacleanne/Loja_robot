@@ -13,6 +13,7 @@ Fechar o navegador
     Sleep    10s    # Pausa o teste por 60 segundos
     Close Browser
 
+#Cadastro de conta
 Given que estou na página de cadastro
     Click Element    ${SING_IN}
     Wait Until Element Is Visible    ${AUTHENTICATION}    
@@ -86,7 +87,8 @@ And insiro uma senha com o máximo de caracteres
 Then deve ser exibida a mensagem "Password too long"  
     Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s  
     Element Text Should Be           ${ALERT_SENHA_MAX}          passwd is too long. Maximum length: 32
-    
+
+#Login   
 Given que estou na página de login
     Click Element    ${SING_IN}
     Wait Until Element Is Visible    ${AUTHENTICATION}  
@@ -102,21 +104,89 @@ When ele informa um email válido e uma senha inválida
     Input Text      ${PASSWORD_2}             ${SENHA_INVALIDA}
 
 Then o sistema deve exibir uma mensagem de erro de senha
-    Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s
-    Element Text Should Be           ${ALERT_LOGIN_INVALIDO}     Invalid password.  
+    Wait Until Element Is Visible    ${ALERT_BOX}     timeout=10s
+    Element Text Should Be           ${ALERT}         Invalid password.  
     
 When ele informa um email inválido e uma senha válida
     Input Text      ${EMAIL_REGISTERED}       ${EMAIL_INVALIDO}
     Input Text      ${PASSWORD_2}             ${SENHA_VALIDA}
 
 Then o sistema deve exibir uma mensagem informando que o email esta errado 
-    Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s
-    Element Text Should Be          ${ALERT_LOGIN_INVALIDO}      Authentication failed. 
+    Wait Until Element Is Visible    ${ALERT_BOX}      timeout=10s
+    Element Text Should Be           ${ALERT}          Authentication failed. 
 
 When ele não preenche email e senha
     Input Text        ${EMAIL_REGISTERED}       ${VAZIO}   
     Input Password    ${PASSWORD_2}             ${VAZIO}
 
 Then o sistema deve exibir mensagem de obrigatoriedade
-    Wait Until Element Is Visible    ${ALERT_BOX}                timeout=10s
-    Element Text Should Be          ${ALERT_LOGIN_INVALIDO}      An email address required.
+    Wait Until Element Is Visible    ${ALERT_BOX}     timeout=10s
+    Element Text Should Be          ${ALERT}          An email address required.
+
+#Cadastro de endereço
+And clico em My Addresses e Add New Address
+    Click Element    ${BUTTON_ADDRESS}
+    Click Element    ${BUTTON_NEW_ADDRESS}
+
+And preencho os campos obrigatórios de endereço
+    Input Text                   ${COMPANY}        clesil.LTDA
+    Input Text                   ${ADDRESS_1}      RUA SEM NOME
+    Input Text                   ${ADDRESS_2}      JOSE SEM NOME
+    Input Text                   ${CITY}           JOAO PESSOA
+    Select From List By Value    ${STATE}          19
+    Input Text                   ${POSTAL}         32003
+    #Select From List By Value   ${COUNTRY}
+    Input Text                   ${PHONE}          +1 566 749 6208
+    Input Text                   ${PHONE_MOBILE}   1 907 498 0930
+    Input Text                   ${INFORMETION}    teste yes teste
+    Input Text                   ${ADDRESS_3}      Miami
+
+And clico em Save
+    Click Element   ${BUTTON_SAVE} 
+
+Then o sistema deve salvar o endereço com sucesso
+    Element Text Should Be    ${SUCESSO_ADRESS}   Your addresses are listed below.
+
+And não preencher o campo City    
+    Input Text                   ${COMPANY}        clesil.LTDA
+    Input Text                   ${ADDRESS_1}      RUA SEM NOME
+    Input Text                   ${ADDRESS_2}      JOSE SEM NOME
+    Select From List By Value    ${STATE}          19
+    Input Text                   ${POSTAL}         32003
+    Input Text                   ${PHONE}          +1 566 749 6208
+    Input Text                   ${PHONE_MOBILE}   1 907 498 0930
+    Input Text                   ${INFORMETION}    teste yes teste
+    Input Text                   ${ADDRESS_3}      Miami
+
+Then o sistema deve exibir a mensagem de erro "City is required"
+    Wait Until Element Is Visible    ${ALERT_BOX}     timeout=10s
+    Element Text Should Be           ${ALERT}         city is required.
+
+And não preencher Home phone e Mobile phone    
+    Input Text                   ${COMPANY}        clesil.LTDA
+    Input Text                   ${ADDRESS_1}      RUA SEM NOME
+    Input Text                   ${ADDRESS_2}      JOSE SEM NOME
+    Input Text                   ${CITY}           JOAO PESSOA
+    Select From List By Value    ${STATE}          19
+    Input Text                   ${POSTAL}         32003
+    Input Text                   ${INFORMETION}    teste yes teste
+    Input Text                   ${ADDRESS_3}      Miami
+
+Then o sistema deve exibir a mensagem de erro "You must register at least one phone number."
+    Wait Until Element Is Visible    ${ALERT_BOX}     timeout=10s
+    Element Text Should Be           ${ALERT}         You must register at least one phone number.
+
+When preencher o campo Zip/Postal Code com "123"    
+    Input Text                   ${COMPANY}        clesil.LTDA
+    Input Text                   ${ADDRESS_1}      RUA SEM NOME
+    Input Text                   ${ADDRESS_2}      JOSE SEM NOME
+    Input Text                   ${CITY}           JOAO PESSOA
+    Select From List By Value    ${STATE}          19
+    Input Text                   ${PHONE}          +1 566 749 6208
+    Input Text                   ${PHONE_MOBILE}   1 907 498 0930
+    Input Text                   ${INFORMETION}    teste yes teste
+    Input Text                   ${ADDRESS_3}      Miami  
+             
+Then o sistema deve exibir a mensagem de erro "Invalid Zip/Postal Code"
+    Wait Until Element Is Visible    ${ALERT_BOX}     timeout=10s
+    Element Text Should Be           ${ALERT}         The Zip/Postal code you've entered is invalid. It must follow this format: 00000    

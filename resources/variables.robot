@@ -10,7 +10,7 @@ ${SING_IN}                   //a[@href="http://www.automationpractice.pl/index.p
 #Variáveis de formulário de cadastro
 ${AUTHENTICATION}            //*[@id="center_column"]/h1
 ${EMAIL_ADDRESS}             id=email_create
-${EMAIL_VALIDO}              clesil06@teste.com 
+${EMAIL_VALIDO}              clesil19@teste.com 
 ${BUTTON_CREATE_ACCOUNT}     id=SubmitCreate
 ${MR}                        id=id_gender1
 ${MRS}                       id=id_gender2
@@ -56,14 +56,29 @@ ${ALERT_ERROR_FIRSTNAME}    xpath=(//div[@class="alert alert-danger"]/ol/li)[2]
 ${ALERT_ERROR_PASSWD}       xpath=(//div[@class="alert alert-danger"]/ol/li)[3]
 ${ALERT_SENHA_INVALIDA1}    xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
 ${ALERT_SENHA_MAX}          xpath=(//div[@class="alert alert-danger"]/ol/li)[1]
-${ALERT_LOGIN_INVALIDO}     xpath=//div[@class="alert alert-danger"]/ol/li
+${ALERT}                    xpath=//div[@class="alert alert-danger"]/ol/li
 ${LOGIN_SUCESSO}            Welcome to your account
 ${ERRO_LOGIN}               Authentication failed.
 ${PERSONAL_INFORMATION}     Your personal information
-
 ${PERSONAL_INFORMATION}     Your personal information
 @{MENSAGENS_ERRO_LOGIN}
 ...    Invalid password.
 ...    Authentication failed.
+   
 
-
+# Variáveis de endereço
+${BUTTON_ADDRESS}       //a[@href="http://www.automationpractice.pl/index.php?controller=addresses"]
+${BUTTON_NEW_ADDRESS}    //a[@href="http://www.automationpractice.pl/index.php?controller=address"]
+${COMPANY}               id=company
+${ADDRESS_1}             id=address1
+${ADDRESS_2}             id=address2
+${CITY}                  id=city
+${STATE}                 id=id_state
+${POSTAL}                id=postcode
+${COUNTRY}               id=id_country
+${PHONE}                 id=phone
+${PHONE_MOBILE}          id=phone_mobile
+${INFORMETION}           id=other
+${ADDRESS_3}             id=alias
+${BUTTON_SAVE}           id=submitAddress
+${SUCESSO_ADRESS}        xpath=(//*[@id="center_column"]/div)[1]/p[1]/strong
